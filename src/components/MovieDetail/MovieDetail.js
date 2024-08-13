@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { fetchAsyncMoviesOrShows,getSelectMoviesOrShows, removeSelectedMovieOrShow } from '../../features/movies/movieSlice'
+import { fetchAsyncMoviesOrShows,getSelectMoviesOrShows,getIsLoadingSelectMoviesOrShows, removeSelectedMovieOrShow } from '../../features/movies/movieSlice'
 import './MovieDetail.scss'
 import { FaStar } from "react-icons/fa";
 import { FaThumbsUp } from "react-icons/fa";
@@ -13,9 +13,10 @@ import { Puff } from 'react-loader-spinner';
 
 
 const MovieDetail=()=>{
-    const isLoading=useSelector(getSelectMoviesOrShows);
+    const isLoading=useSelector(getIsLoadingSelectMoviesOrShows);
     const {imdbID}=useParams();
-    console.log("id");
+    console.log("isLoading")
+    console.log(isLoading);
     
      console.log(imdbID);
      

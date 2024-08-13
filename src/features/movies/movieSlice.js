@@ -90,7 +90,7 @@ const movieSlice = createSlice({
 });
 
 export const { addMovies, removeSelectedMovieOrShow } = movieSlice.actions;
-export const getIsSelectMoviesOrShows=(state)=>state.movies.isSelectMoviesOrShows
+export const getIsLoadingSelectMoviesOrShows=(state)=>state.movies.isSelectMoviesOrShows
 export const getIsLoading = (state) => state.movies.isLoading;
 export const getAllMovies = (state) => state.movies.movies;
 export const getAllShows = (state) => state.movies.shows;
