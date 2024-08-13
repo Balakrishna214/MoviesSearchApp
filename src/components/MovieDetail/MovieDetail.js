@@ -7,12 +7,13 @@ import { FaStar } from "react-icons/fa";
 import { FaThumbsUp } from "react-icons/fa";
 import { FaFilm } from "react-icons/fa";
 import { CiCalendar } from "react-icons/ci";
+import { Puff } from 'react-loader-spinner';
 
 
 
 
 const MovieDetail=()=>{
-     
+    const isLoading=useSelector(getSelectMoviesOrShows);
     const {imdbID}=useParams();
     console.log("id");
     
@@ -31,8 +32,17 @@ const MovieDetail=()=>{
     const {Title,imdbRating,imdbVotes,Runtime,Year,Plot,Director,Actors,Genre,Language,Awards,Poster}=data
     return(
         <div className='movie-section'>
-            {Object.keys(data).length===0?(<div>
-                ...Loading
+            {/* Object.keys(data).length===0 */}
+            {isLoading?(<div className='loader'>
+                <Puff
+                        visible={true}
+                        height="80"
+                        width="80"
+                        color="#ffff"
+                        ariaLabel="puff-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                    />
             </div>):
            ( <>
             <div className='section-left'>
